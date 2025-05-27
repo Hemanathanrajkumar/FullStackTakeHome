@@ -1,5 +1,10 @@
 import express from 'express';
+import cors from 'cors';
+import insurancePolicyRouter from './routes/insurance-policy.routes';
 
 const app = express();
 
-// app.use('/', )
+app.use(cors());
+app.use('/', insurancePolicyRouter)
+
+export default app;
