@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import insurancePolicyService from "./insurace-policy.service";
+import insurancePolicyService from "./insurance-policy.service";
 
 class InsurancePolicyController {
     constructor() {

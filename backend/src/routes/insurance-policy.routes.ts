@@ -1,5 +1,5 @@
 import { Router } from "express";
-import insurancePolicyController from "../insurance-policy/insurace-policy.controller";
+import insurancePolicyController from "../insurance-policy/insurance-policy.controller";
 
 const insurancePolicyRouter = Router();
 insurancePolicyRouter
