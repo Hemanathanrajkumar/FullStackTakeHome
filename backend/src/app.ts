@@ -7,16 +7,15 @@ const app = express();
 
 app.use(cors());
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API routes — add these BEFORE the wildcard route
 app.use('/api', insurancePolicyRouter);
 console.log('Adding fallback wildcard route');
-
 // Wildcard fallback — only for non-API routes (Angular routes)
-// app.get('/*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
-app.use('/static', express.static(path.join(__dirname, 'public')))
+// app.use('/static', express.static(path.join(__dirname, 'public')))
 export default app;
