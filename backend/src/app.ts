@@ -6,14 +6,15 @@ import path from 'path';
 const app = express();
 
 app.use(cors());
-app.use('/api', insurancePolicyRouter)
 
-
-// Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Fallback to index.html for Angular routing
+// API routes — add these BEFORE the wildcard route
+app.use('/api', insurancePolicyRouter);
+
+// Wildcard fallback — only for non-API routes (Angular routes)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
 export default app;
