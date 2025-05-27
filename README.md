@@ -9,7 +9,9 @@ Once clonned please execute the following cmds
 
 cd front-end-app
 npm install 
-cd ..
+cd environments
+cp environment.dev.ts environment.ts
+cd ../..
 cd backend 
 npm install
 
