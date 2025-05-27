@@ -15,6 +15,11 @@ app.use('/', express.static(path.join(__dirname, '../public')));
 // API routes — add these BEFORE the wildcard route
 app.use('/api', insurancePolicyRouter);
 console.log('Adding fallback wildcard route');
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+});
+
 // Wildcard fallback — only for non-API routes (Angular routes)
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
