@@ -21,3 +21,6 @@ ng serve
 To run the Backedn Application
 cd backend 
 npm start 
+
+
+I've used in memory json for file store in Backend and also implemented Sort and Filter Pipe in Frontend 
