@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable()
-
 export class HttpBaseService {
   
   httpClient!: HttpClient;
@@ -20,6 +19,6 @@ export class HttpBaseService {
 
   _getFullUrl(uri: string) {
     const url = `${environment.baseURL}/${uri}`;
-    return uri
+    return url;
   }
 }

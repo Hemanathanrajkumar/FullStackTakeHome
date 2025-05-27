@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InsurancePolicyModel } from 'src/app/models/insurance-policy.model';
 import { InsurancePolicyService } from 'src/app/services/insurance-policy.service';
 
 @Component({
@@ -8,12 +9,17 @@ import { InsurancePolicyService } from 'src/app/services/insurance-policy.servic
 })
 export class HomePageComponent {
 
+  insuranceData!: InsurancePolicyModel[];
+
   constructor (
     private insuranceDataService: InsurancePolicyService
-  ) {}
-
-  getInsurancePolicyData() {
-    
+  ) {
+    this.getInsurancePolicyData();
   }
 
+  getInsurancePolicyData() {
+    this.insuranceDataService.getInsurancePolicyData().subscribe((datum: InsurancePolicyModel[]) => {
+      this.insuranceData = datum;
+    })
+  }
 }

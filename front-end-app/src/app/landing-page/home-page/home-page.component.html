@@ -1,2 +1,4 @@
 <p>home-page works!</p>
-<app-table></app-table>
+<div class="table" *ngIf="insuranceData && insuranceData.length > 0">
+    <app-table [data]="insuranceData"></app-table>
+</div>
