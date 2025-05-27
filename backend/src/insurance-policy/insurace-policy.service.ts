@@ -1,4 +1,5 @@
 import { InMemoryDatabase } from "../db/in-memory.db";
+import { InsurancePolicy } from "./insurance-policy.interface";
 
 class InsurancePolicyService {
     private db: InMemoryDatabase;
@@ -32,7 +33,6 @@ class InsurancePolicyService {
     constructor() {
         this.db = new InMemoryDatabase();
         this.db.addBulkPolicies(this.data);
-        console.log(this.db.getPolicies());
     }
 
     async getPolicies(): Promise<InsurancePolicy[]> {

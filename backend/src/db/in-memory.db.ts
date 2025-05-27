@@ -1,3 +1,5 @@
+import { DatabaseSchema, InsurancePolicy } from "../insurance-policy/insurance-policy.interface";
+
 export class InMemoryDatabase {
     private data: DatabaseSchema;
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TableComponent {
 
-  @Input('columns')columns: string[] = [];
+  @Input('columns') columns: any[] = [];
   @Input('data') data: any = {};
 
 }

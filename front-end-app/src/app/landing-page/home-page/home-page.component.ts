@@ -10,6 +10,7 @@ import { InsurancePolicyService } from 'src/app/services/insurance-policy.servic
 export class HomePageComponent {
 
   insuranceData!: InsurancePolicyModel[];
+  columns: string[] =[];
 
   constructor (
     private insuranceDataService: InsurancePolicyService
@@ -19,7 +20,10 @@ export class HomePageComponent {
 
   getInsurancePolicyData() {
     this.insuranceDataService.getInsurancePolicyData().subscribe((datum: InsurancePolicyModel[]) => {
-      this.insuranceData = datum;
+      if(datum && datum.length > 0) {
+        this.insuranceData = datum;
+        this.columns = Object.keys(datum[0]);
+      }
     })
   }
 }

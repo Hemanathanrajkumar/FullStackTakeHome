@@ -1,4 +1,4 @@
-interface InsurancePolicy {
+export interface InsurancePolicy {
     id: number;
     name: string;
     type: string;
@@ -6,6 +6,6 @@ interface InsurancePolicy {
     coverage: number;
 }
 
-interface DatabaseSchema {
+export interface DatabaseSchema {
     policies: InsurancePolicy[];
 }
