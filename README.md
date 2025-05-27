@@ -24,3 +24,5 @@ npm start
 
 
 I've used in memory json for file store in Backend and also implemented Sort and Filter Pipe in Frontend 
+Sort and Filter is for all columns 
+Search functionality is implemented for Name column only
