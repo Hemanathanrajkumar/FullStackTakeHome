@@ -1,0 +1,16 @@
+<div class="table-comp">
+    <table *ngIf="columns.length > 0">
+        <thead>
+            <th *ngFor="let col of columns">
+                {{col}}
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let datum of data">
+                <td *ngFor="let col of columns">
+                    {{datum[col]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
