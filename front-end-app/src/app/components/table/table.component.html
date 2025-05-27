@@ -1,4 +1,5 @@
 <div class="table-comp">
+    <input type="text" placeholder="Filter by Policy Name" [(ngModel)]="searchKey" (keyup)="searchBYKey()">
     <table *ngIf="columns.length > 0">
         <thead>
             <th *ngFor="let col of columns">
@@ -17,7 +18,7 @@
             </th>
         </thead>
         <tbody>
-            <tr *ngFor="let datum of data| filter:columns | sort:columns">
+            <tr *ngFor="let datum of duplicateData| filter:columns | sort:columns">
                 <td *ngFor="let col of columns">
                     {{datum[col.key] }}
                 </td>
