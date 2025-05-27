@@ -18,6 +18,5 @@ console.log('Adding fallback wildcard route');
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
 
-app.use(express.static('public'))
-
+app.use('/static', express.static(path.join(__dirname, 'public')))
 export default app;
