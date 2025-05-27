@@ -6,7 +6,7 @@ import path from 'path';
 const app = express();
 
 app.use(cors());
-app.use('/insurance-policy', insurancePolicyRouter)
+app.use('/api', insurancePolicyRouter)
 
 
 // Serve static files

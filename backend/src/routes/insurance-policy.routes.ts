@@ -3,7 +3,7 @@ import insurancePolicyController from "../insurance-policy/insurace-policy.contr
 
 const insurancePolicyRouter = Router();
 insurancePolicyRouter
-    .get('/', insurancePolicyController.getInsuraceDetails)
+    .get('/insurance-policy', insurancePolicyController.getInsuraceDetails)
 
 
 export default insurancePolicyRouter;
