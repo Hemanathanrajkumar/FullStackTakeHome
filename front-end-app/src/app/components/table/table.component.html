@@ -2,13 +2,24 @@
     <table *ngIf="columns.length > 0">
         <thead>
             <th *ngFor="let col of columns">
-                {{col}}
+                <span (click)="setSortOrder(col)">
+                    {{col.key}}
+                </span>
+                <span *ngIf="col.sort == 'asc'">
+                    &uarr;
+                </span>
+                <span *ngIf="col.sort == 'dsc'">
+                    &dArr;
+                </span>
+                <span>
+                    <input type="text" [(ngModel)]="col.filterVal">
+                </span>
             </th>
         </thead>
         <tbody>
-            <tr *ngFor="let datum of data">
+            <tr *ngFor="let datum of data| filter:columns | sort:columns">
                 <td *ngFor="let col of columns">
-                    {{datum[col]}}
+                    {{datum[col.key] }}
                 </td>
             </tr>
         </tbody>

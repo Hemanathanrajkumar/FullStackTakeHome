@@ -8,10 +8,14 @@ import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [
     SortPipe,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     CommonModule
+  ], 
+  exports: [
+    SortPipe,
+    FilterPipe,
   ]
 })
 export class PipesModule { }

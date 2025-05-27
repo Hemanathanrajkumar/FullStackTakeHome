@@ -10,19 +10,25 @@ import { InsurancePolicyService } from 'src/app/services/insurance-policy.servic
 export class HomePageComponent {
 
   insuranceData!: InsurancePolicyModel[];
-  columns: string[] =[];
+  columns: any[] = [];
 
-  constructor (
+  constructor(
     private insuranceDataService: InsurancePolicyService
   ) {
     this.getInsurancePolicyData();
   }
 
-  getInsurancePolicyData() {
-    this.insuranceDataService.getInsurancePolicyData().subscribe((datum: InsurancePolicyModel[]) => {
-      if(datum && datum.length > 0) {
+  getInsurancePolicyData(pathParams?: string) {
+    this.insuranceDataService.getInsurancePolicyData(pathParams).subscribe((datum: InsurancePolicyModel[]) => {
+      if (datum && datum.length > 0) {
         this.insuranceData = datum;
-        this.columns = Object.keys(datum[0]);
+        if (this.columns.length < 1) {
+          this.columns = Object.keys(datum[0]).map(x => ({
+            key: x,
+            filterVal: '',
+            sort: ''
+          }));
+        }
       }
     })
   }

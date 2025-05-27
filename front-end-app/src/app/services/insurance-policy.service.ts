@@ -14,9 +14,13 @@ export class InsurancePolicyService extends HttpBaseService {
     super(injector)
   }
 
-  getInsurancePolicyData(): Observable<InsurancePolicyModel[]> {
+  getInsurancePolicyData(pathParams?: any): Observable<InsurancePolicyModel[]> {
     const observable = new Observable<InsurancePolicyModel[]>((subscriber: any) => {
-      this._get(this.url).subscribe((data: any) => {
+      let url = this.url;
+      if(pathParams) {
+        url = `${url}?${pathParams}`
+      }
+      this._get(url).subscribe((data: any) => {
         subscriber.next(data);
       }, (error: any) => {
         subscriber.error(error);
