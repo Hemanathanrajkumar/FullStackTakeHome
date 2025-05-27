@@ -8,19 +8,15 @@ import { HttpBaseService } from './http-base.service';
 })
 export class InsurancePolicyService extends HttpBaseService {
 
-  url = 'insurance-policy'
+  url = 'api/insurance-policy'
 
   constructor(injector: Injector) {
     super(injector)
   }
 
-  getInsurancePolicyData(pathParams?: any): Observable<InsurancePolicyModel[]> {
+  getInsurancePolicyData(): Observable<InsurancePolicyModel[]> {
     const observable = new Observable<InsurancePolicyModel[]>((subscriber: any) => {
-      let url = this.url;
-      if(pathParams) {
-        url = `${url}?${pathParams}`
-      }
-      this._get(url).subscribe((data: any) => {
+      this._get(this.url).subscribe((data: any) => {
         subscriber.next(data);
       }, (error: any) => {
         subscriber.error(error);

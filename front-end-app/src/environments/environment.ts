@@ -1,6 +1,6 @@
 export const environment = {
   api: {
-    baseURL: '/v1',
+    baseURL: '/',
   },
   portal: {
     baseURL: '/'

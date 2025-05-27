@@ -18,8 +18,8 @@ export class HomePageComponent {
     this.getInsurancePolicyData();
   }
 
-  getInsurancePolicyData(pathParams?: string) {
-    this.insuranceDataService.getInsurancePolicyData(pathParams).subscribe((datum: InsurancePolicyModel[]) => {
+  getInsurancePolicyData() {
+    this.insuranceDataService.getInsurancePolicyData().subscribe((datum: InsurancePolicyModel[]) => {
       if (datum && datum.length > 0) {
         this.insuranceData = datum;
         if (this.columns.length < 1) {
