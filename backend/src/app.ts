@@ -8,7 +8,9 @@ const app = express();
 app.use(cors());
 
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+console.log('Static Path:', path.join(__dirname, '../public'));
+
+app.use('/', express.static(path.join(__dirname, '../public')));
 
 // API routes — add these BEFORE the wildcard route
 app.use('/api', insurancePolicyRouter);

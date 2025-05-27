@@ -18,7 +18,7 @@ export class HttpBaseService {
   }
 
   _getFullUrl(uri: string) {
-    const url = `${environment.baseURL}/${uri}`;
+    const url = `${environment.api.baseURL}/${uri}`;
     return url;
   }
 }
