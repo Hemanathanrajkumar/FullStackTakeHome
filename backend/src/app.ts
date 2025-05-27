@@ -14,8 +14,7 @@ app.use('/api', insurancePolicyRouter);
 console.log('Adding fallback wildcard route');
 
 // Wildcard fallback — only for non-API routes (Angular routes)
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 export default app;
